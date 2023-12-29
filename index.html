@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="sticky-top p-4 badge-success text-light">
+        <h1>Resume Builder</h1>
+    </div>
+    <div class="container">
+        <div class="row mt-2">
+                <div class="col-12 bg-light p-2"><h3>Personal Details</h3></div>
+                <div class="col-md-4 mb-2 mt-2">
+                    <label for="fullname" class="control-label">Full name</label>
+                    <input type="text" id="fullname" name="fullname" class="form-control" placeholder="Full Name"
+                        maxlength="50" required>
+                </div>
+                <div class="col-md-4 mb-2 mt-2">
+                    <label for="email" class="control-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Email" maxlength="50"
+                        required autocomplete="email">
+                </div>
+                <div class="col-md-4 mb-2 mt-2">
+                    <label for="number" class="control-label">Contact</label>
+                    <input type="tel" id="number" name="number" class="form-control" placeholder="Contact number"
+                        maxlength="10" minlength="10" required>
+                </div>
+                <br>
+                <div class="col-md-4 mb-2 mt-2">
+                    <label for="State" class="control-label">State</label>
+                    <input type="text" list="stateList" id="State" name="State" class="form-control"
+                        placeholder="Address" required>
+                    <datalist id="stateList">
+                       
+                    </datalist>
+                </div>
+                <div class="col-md-4 mb-2 mt-2">
+                    <label for="City" class="control-label">City</label>
+                    <input type="text" id="City" name="City" class="form-control" placeholder="City" maxlength="40"
+                        minlength="1" required>
+                </div>
+                <div class="col-md-4 mb-2 mt-2">
+                    <label for="zip" class="control-label">ZIP Code</label>
+                    <input type="text" id="zip" name="zip" class="form-control" placeholder="ZIP Number"
+                        pattern="[0-9]{6}" maxlength="6" required>
+                </div>
+                <br>
+                <div class="col-md-4 mb-2 mt-2">
+                    <label for="Linkedin" class="control-label">Linkedin</label>
+                    <input type="url" id="Linkedin" name="Linkedin" class="form-control" placeholder="Linkedin url"
+                        maxlength="50" required>
+                </div>
+                <div class="col-md-4 mb-2 mt-2">
+                    <label for="Github" class="control-label">Github</label>
+                    <input type="text" id="Github" name="Github" class="form-control" placeholder="Github"
+                        maxlength="50" required>
+                </div>
+                <div class="col-md-4 mb-2 mt-2">
+                    <label for="Other_link" class="control-label">Other link</label>
+                    <input type="url" id="Other_link" name="Other_link" class="form-control" placeholder="Other link"
+                        maxlength="50">
+                </div>
+                <div class="col-md-12 text-center mt-2 mb-2">
+                    
+                        <button type="button" class="btn badge-success" id="savepersonaldetailsbtn">Save</button>
+                    
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-12 bg-light p-2"><h3>Summary</h3></div>
+                <div class="col-md-12 mb-2 mt-2">
+                    <label for="summary" class="control-label">About</label>
+                    <textarea class="form-control mb-2 mt-2 " id="summary" rows="4" maxlength="300"
+                        placeholder="Tell us about yourself..." required></textarea>
+                </div>
+                <div class="col-md-12 text-center mb-2">
+                    
+                    <button type="button " class=" btn badge-success" id="summarybtn">save</button>
+                
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-12 bg-light p-2"><h3>Education</h3></div>
+                <div class="col-md-8 mb-2 mt-2">
+                    <label for="Institute_Name" class="control-label">Institute Name</label>
+                    <input type="text" id="Institute_Name" name="Institute_Name" class="form-control"
+                        placeholder="Institute Name" maxlength="60" required>
+                </div>
+                <div class="col-md-4 mb-2 mt-2">
+                    <label for="degree" class="control-label">Degree</label><br>
+                    <select name="degree" id="degree">
+                        <option value="B.E">B.E</option>
+                        <option value="B.Tech">B.Tech</option>
+                        <option value="B.Sc">B.Sc</option>
+                        <option value="B.Ms">B.Ms</option>
+                        <option value="M.E">M.E</option>
+                        <option value="M.Tech">M.Tech</option>
+                        <option value="M.Sc">M.Sc</option>
+                    </select>
+                </div>
+                <br>
+                <div class="col-md-4 mb-2 mt-2">
+                    <label for="Branch" class="control-label">Branch</label>
+                    <input type="text" id="Branch" name="Branch" list="branchList" class="form-control"
+                        placeholder="Computer Sccience" maxlength="60" required>
+                </div>
+                <div class="col-md-4 mb-2 mt-2">
+                    <label for="percentage" class="control-label">CGPA/Percentage</label>
+                    <input type="number" id="percentage" name="percentage" class="form-control" placeholder="8.6"
+                        required>
+                </div>
+                <div class="col-md-4 mb-2 mt-2">
+                    <label for="compYear" class="control-label">Completion Year</label>
+                    <input type="number" id="compYear" name="compYear" class="form-control" min="0" placeholder="2020"
+                        required>
+                </div>
+                <div class="col-md-12 text-center  mb-2 mt-2">
+                    <button type="button " class=" btn badge-success" id="educationbtn">save</button>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-12 bg-light p-2"><h3>Experience</h3></div>
+                <div class="col-md-6 mb-2 mt-2">
+                    <label for="Company_name" class="control-label">Company Name</label>
+                    <input type="text" id="Company_name" name="Company_name" class="form-control"
+                        placeholder="Company Name" maxlength="60" minlength="1" required>
+                </div>
+                <div class="col-md-6 mb-2 mt-2">
+                    <label for="Role" class="control-label">Role</label>
+                    <input type="text" id="Role" name="Role" class="form-control" placeholder="Software Engineer"
+                        maxlength="60" minlength="1" required>
+                </div>
+                <br>
+                <div class="col-md-12 mb-2 mt-2">
+                    <label for="Experience" class="control-label">Responsibility</label>
+                    <textarea class="form-control mb-2 mt-2 " id="Experience" rows="4" maxlength="380" minlength="10"
+                        placeholder="Tell us more about yourself work Experience..." required></textarea>
+                </div>
+                <div class="col-md-12 text-center mb-2 mt-2">
+                    <button type="button " class=" btn badge-success" id="experbtn">save</button>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-12 bg-light p-2"><h3>Project</h3></div>
+                <div class="col-md-6 mb-2 mt-2">
+                    <label for="Project_name" class="control-label">Project Name</label>
+                    <input type="text" id="Project_name" name="Project_name" class="form-control"
+                        placeholder="Company Name" maxlength="60" minlength="1" required>
+                </div>
+                <div class="col-md-6 mb-2 mt-2">
+                    <label for="URL" class="control-label">URL</label>
+                    <input type="url" id="URL" name="URL" class="form-control" placeholder="Project URL" maxlength="60"
+                        required>
+                </div>
+                <br>
+                <div class="col-md-12 mb-2 mt-2">
+                    <textarea class="form-control mb-2 mt-2 " id="projectDetails" rows="4" maxlength="380"
+                        placeholder="Tell us more about your Project..." required></textarea>
+                </div>
+                <div class="col-md-12 text-center mb-2 mt-2">
+                    <button type="button " class=" btn badge-success" id="projectbtn">save</button>
+                </div>
+            </div>
+
+
+            <div class="row mt-2">
+                <div class="col-12 bg-light p-2"><h3>Skills</h3></div>
+                <div class="col-md-8 mb-2 mt-2">
+                    <input type="skill" id="skill" name="skill" class="form-control" placeholder="Python" maxlength="40"
+                        minlength="1" required>
+                </div>
+                <div class="col-md-4 mb-2 mt-2">
+                    <button type="button " class=" btn badge-success" id="skillbtn">Add</button>
+                </div>
+                <br>
+                <div class="col-md-12 mb-2 mt-2" id="skilldiv"></div>
+                <div class="col-md-12 text-center mb-2 mt-2">
+                    <button type="button " class=" btn badge-success" id="saveskillbtn">save</button>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-12 bg-light p-2"><h3>Course/Certificates</h3></div>
+                <div class="col-md-8 mb-2 mt-2">
+                     <input type="text" id="Certificates" name="Certificates" class="form-control"
+                        placeholder="Add Certificates" maxlength="60" minlength="1">
+                </div>
+                <div class="col-md-4 mb-2 mt-2">
+                    <button type="button " class=" btn badge-success" id="addCertifbtn">Add</button>
+                    
+                </div>
+                <br>
+                <div class="col-md-12 mb-2 " id="addCertif"></div>
+                <div class="col  mb-2  text-center">
+                   
+                        <button type="button " class=" btn badge-success" id="savecertifbtn">save</button>
+                    
+                    
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-12 bg-light p-2"><h3>Achivement</h3></div>
+                <div class="col-md-8 mb-2 mt-2">
+                    <input type="text" id="textAchivement" name="Achivement" class="form-control"
+                        placeholder="Tell us about your latest achivement ..." maxlength="60" minlength="1">
+                </div>
+                <div class="col-md-4 mb-2 mt-2">
+                    <button type="button " class=" btn badge-success" id="addAchivementbtn">Add</button>
+                </div>
+                <br>
+                <div class="col-md-12 mb-2 mt-2" id="adddiv"></div>
+                <div class="col text-center mb-2">
+                    <button type="button " class=" btn badge-success" id="saveachivbtn">save</button>
+                </div>
+            </div>
+
+            <div class="row mt-2 mb-2">
+                <div class="col text-center bg-light mt-2 mb-2">
+                    <button type="button" id="generatepdf" class="btn badge-success" onclick="generatePDF()">generate</button>
+                </div>
+                
+            </div>
+        </div>
+        <script type="text/javascript" src="stateList.js"></script>
+        <script type="text/javascript" src="script.js" defer></script>
+        <script type="text/javascript" src="jspdf.js"></script>
+</body>
+</html>
