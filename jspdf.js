@@ -71,7 +71,7 @@ function generatePDF() {
   doc.text(12,48,resumeData.summary,{maxWidth:80,align:'justify'});
   
   // role
-  doc.text("Web developer",12,28);
+ // doc.text("Web developer",12,28);
    
   // contact
    doc.text(12,98,resumeData.personalDetails.contact);
