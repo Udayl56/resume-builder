@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <title>Document</title>
+    <script src="https://kit.fontawesome.com/380df37fe5.js" crossorigin="anonymous"></script>
+    <title>Resume Builder</title>
 </head>
 
 <body>
@@ -181,7 +182,8 @@
                         minlength="1" required>
                 </div>
                 <div class="col-md-4 mb-2 mt-2">
-                    <button type="button " class=" btn badge-success" id="skillbtn">Add</button>
+                    <i class="fa-solid fa-plus" id="skillbtn"></i>
+                    <!-- <button type="button " class=" btn badge-success" id="skillbtn">Add</button> -->
                 </div>
                 <br>
                 <div class="col-md-12 mb-2 mt-2" id="skilldiv"></div>
@@ -197,7 +199,8 @@
                         placeholder="Add Certificates" maxlength="60" minlength="1">
                 </div>
                 <div class="col-md-4 mb-2 mt-2">
-                    <button type="button " class=" btn badge-success" id="addCertifbtn">Add</button>
+                    <i class="fa-solid fa-plus" id="addCertifbtn"></i>
+                    <!--<button type="button " class=" btn badge-success" id="addCertifbtn">Add</button> -->
                     
                 </div>
                 <br>
@@ -217,7 +220,8 @@
                         placeholder="Tell us about your latest achivement ..." maxlength="60" minlength="1">
                 </div>
                 <div class="col-md-4 mb-2 mt-2">
-                    <button type="button " class=" btn badge-success" id="addAchivementbtn">Add</button>
+                    <i class="fa-solid fa-plus" id="addAchivementbtn"></i>
+                   <!-- <button type="button " class=" btn badge-success" id="addAchivementbtn">Add</button> -->
                 </div>
                 <br>
                 <div class="col-md-12 mb-2 mt-2" id="adddiv"></div>
@@ -228,7 +232,7 @@
 
             <div class="row mt-2 mb-2">
                 <div class="col text-center bg-light mt-2 mb-2">
-                    <button type="button" id="generatepdf" class="btn badge-success" onclick="generatePDF()">generate</button>
+                    <button type="button" id="generatepdf" class="btn badge-success" onclick="generatePDF()"><i class="fa-solid fa-down-long"></i>Download </button>
                 </div>
                 
             </div>
